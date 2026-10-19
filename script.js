@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const exploreButton = document.getElementById("explore-btn");
   const chatResponse = document.getElementById("chat-response");
   const options = document.getElementById("qualification-options");
-
+  const leadForm = document.getElementById("lead-form");
   // This variable will store the visitor's team size
   let teamSize = "";
   let selectedChallenge = "";
@@ -79,6 +79,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }  // Recommend a next step using the visitor's answers
   function showRecommendation() {
+        leadForm.hidden = false;
+    const lead = {
+      teamSize: teamSize,
+      challenge: selectedChallenge
+    };
+
+      console.log(lead);
+
+    const leadJSON = JSON.stringify(lead);
+    console.log(leadJSON);
 
     options.innerHTML = "";
 
@@ -98,6 +108,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
   }
+    leadForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const visitorName =
+      document.getElementById("visitor-name").value.trim();
+    const visitorEmail =
+      document.getElementById("visitor-email").value.trim();
+      const submittedLead = {
+      name: visitorName,
+            email: visitorEmail,
+      teamSize: teamSize,
+      challenge: selectedChallenge
+    };
+
+    console.log("Submitted lead:", submittedLead);
+
+  });
   // Start when someone clicks Book a demo
   demoButton.addEventListener("click", askTeamSize);
 
