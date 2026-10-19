@@ -1,0 +1,45 @@
+
+/* Style the entire webpage */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6fb;
+  color: #1e293b;
+  padding: 40px;
+}
+
+/* Style the main heading */
+h1 {
+  color: #2563eb;
+  font-size: 36px;
+}
+
+/* Style the chatbot container */
+#chatbot {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 450px;
+  margin-top: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the chatbot heading */
+#chatbot h2 {
+  font-size: 20px;
+}
+
+/* Style the buttons */
+button {
+  background-color: #9333ea;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* Change button colour when hovered */
+button:hover {
+  background-color: #1d4ed8;
+}
